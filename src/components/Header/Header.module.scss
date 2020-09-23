@@ -1,0 +1,30 @@
+.logo{
+  max-width: 30px;
+}
+.header{
+  max-width: 100%;
+  background: #222835;
+  grid-row: 1;
+  grid-column:1/3 ;
+  position: relative;
+
+}
+.header__inner{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: 20px;
+  color: #fff;
+  font-family: 'Raleway';
+  text-transform: uppercase;
+  font-size: 30px;
+  line-height: 60px;
+  display: flex;
+  justify-content: space-between;
+
+  button{
+    color: #fff;
+  }
+  //line-height: 60px;
+}
+
+.loginBlock{}

@@ -1,0 +1,86 @@
+textarea:focus{
+  background: inherit;
+  border: none;
+  outline: none;
+}
+button, button:focus{
+  outline: none;
+  background: inherit;
+}
+
+.item{
+  color: greenyellow;
+}
+.postsWrapper{
+  padding: 10px;
+}
+.posts{
+  margin-top: 20px;
+}
+.postHeader{
+  text-transform: uppercase;
+}
+
+
+.makePostWrapper{
+  display: flex;
+  flex-direction: column;
+}
+.makePost{
+  display: flex;
+  width: 100%;
+  border: 3px solid #222835;
+  border-radius: 15px;
+  position: relative;
+  z-index: 2;
+  margin-bottom: 10px;
+  align-items: center;
+}
+.postAvatar{
+  width: 50px;
+  height: 50px;
+  position: relative;
+  img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+  }
+}
+.post{
+  width: 100%;
+  padding: 10px;
+}
+.postText{
+  resize: none;
+  width: 100%;
+  border: 0;
+  position: relative;
+  z-index: 0;
+  font-family: Raleway;
+  max-height: 50px;
+  font-size: 16px;
+}
+.postButton{
+  background: #222835;
+  border-radius: 10px;
+  max-width: 100px;
+  display: inline-flex;
+  justify-content: center;
+  margin-left: auto;
+  button{
+    border-radius: 10px;
+    cursor: pointer;
+  }
+
+}
+.postButtonText{
+  padding: 5px 10px;
+  font-size: 16px;
+  color: white;
+}
+
+

@@ -1,0 +1,15 @@
+
+.paginator{
+
+}
+.pageNumber{
+  padding:4px;
+  font-size: 26px;
+  font-family: Gilroy;
+  cursor: pointer;
+
+  &.selectedPage{
+    color: gold;
+    font-weight: 700;
+  }
+}
