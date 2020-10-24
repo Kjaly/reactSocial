@@ -1,7 +1,7 @@
-import React, {Suspense} from 'react';
+import React, {Component, Suspense} from 'react';
 import './App.scss';
 import Nav from "./components/Nav/Nav";
-import {withRouter, Route, BrowserRouter} from "react-router-dom";
+import {withRouter, Route, HashRouter} from "react-router-dom";
 import Music from "./components/Music/Music";
 import './components/fonts/fonts.css'
 import UsersContainer from "./components/Users/UsersContainer";
@@ -16,9 +16,17 @@ import {withSuspense} from "./hoc/withSuspense";
 const DialogsContainer = React.lazy(() => import('./components/Dialogs/DialogsContainer'))
 const ProfileContainer = React.lazy(() => import('./components/Profile/ProfileContainer'))
 
-class App extends React.Component<{}> {
+class App extends Component {
+    catchAllUnhandledError = (reason, promise) => {
+        alert('some error');
+        console.log(promise);
+    }
     componentDidMount() {
-        this.props.initializeApp()
+        this.props.initializeApp();
+        window.addEventListener('unhandledrejection', this.catchAllUnhandledError)
+    }
+    componentWillUnmount() {
+        window.removeEventListener('unhandledrejection', this.catchAllUnhandledError)
     }
 
     render() {
@@ -36,7 +44,7 @@ class App extends React.Component<{}> {
                                render={withSuspense(DialogsContainer)}/>
                         <Route path='/profile/:userId?'
                                render={withSuspense(ProfileContainer)}/>
-                        <Route path='/users' render={() => <UsersContainer/>}/>
+                        <Route path='/users' render={() => <UsersContainer pageTitle='TestPage'/>}/>
                         <Route path='/login' render={() => <Login/>}/>
                         <Route path='/music' render={() => <Music/>}/>
                     </div>
@@ -54,11 +62,11 @@ const mapStateToProps = (state) => ({
     connect(mapStateToProps, {initializeApp}))(App)
 
 let SamutaiJSApp = (props) => {
-    return <BrowserRouter basename={process.env.PUBLIC_URL}>
+    return <HashRouter >
         <Provider store={store}>
             <AppContainer/>
         </Provider>
-    </BrowserRouter>
+    </HashRouter>
 }
 
 export default SamutaiJSApp;

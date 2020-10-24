@@ -13,26 +13,3 @@ export const Element = Element => ({ input, meta: {touched,error}, ...props }) =
     );
 };
 
-// export const Textarea = (props) => {
-//     const hasError = meta.touched && meta.error
-//     return(
-//         <div className={s.post + ' ' + st.formControl + ' ' + (hasError ? st.error: '')} >
-//             <div>
-//             <textarea  className = {s.postText} {...input} {...props.input} />
-//             </div>
-//             {hasError && <span>{meta.error}</span>}
-//         </div>
-//     )
-// }
-//
-// export const Input = ({input, meta, ...props}) => {
-//     const hasError = meta.touched && meta.error
-//     return(
-//         <div className={st.formControl + ' ' + (hasError ? st.error: '')} >
-//             <div>
-//                 <input  {...input} {...props.input} />
-//             </div>
-//             {hasError && <span>{meta.error}</span>}
-//         </div>
-//     )
-// }

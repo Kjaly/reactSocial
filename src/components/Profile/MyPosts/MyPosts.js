@@ -8,7 +8,7 @@ import {Element} from "../../common/FormsControls/FormsControls";
 
 const MyPosts = React.memo(props => {
     console.log('render')
-    let postElements = props.posts.map(p => <Post counts={p.likesCount} message={p.message}/>)
+    let postElements = props.posts.map(p => <Post key={p.id} counts={p.likesCount} message={p.message}/>)
 
     let addNewPost = (values) => {
         props.addPost(values.newPostBody)
