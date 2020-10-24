@@ -4,14 +4,14 @@ import userPhoto from "../../assets/images/IconBros.png";
 import {NavLink} from "react-router-dom";
 import {UserType} from "../../Types/types";
 
-type  PropsType =  {
-    user: UserType,
-    followingInProgress:Array<number>
-    unfollow:(userId:number)=>void
-    follow:(userId:number)=>void
-    followed:boolean
-}
-let User:FC<PropsType> = ({user,followingInProgress,unfollow,follow})=> {
+// type  PropsType =  {
+//     user: UserType,
+//     followingInProgress:Array<number>
+//     unfollow:(userId:number)=>void
+//     follow:(userId:number)=>void
+//     followed:boolean
+// }
+let User = ({user,followingInProgress,unfollow,follow})=> {
     return (
         <div key={user.id}>
                     <span>
