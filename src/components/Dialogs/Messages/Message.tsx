@@ -1,7 +1,11 @@
-import React from 'react';
+import React, {FC} from 'react';
 import s from "../Dialogs.module.scss";
 
-const Message = (props) => {
+type PropsType={
+    message:string
+}
+
+const Message:FC<PropsType> = (props) => {
     return (
         <div className={s.message}>
             <div className={s.messageImg}>

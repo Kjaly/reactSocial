@@ -1,9 +1,9 @@
-import React from "react";
+import React, {FC} from "react";
 import s from './Nav.module.scss'
 import {NavLink} from "react-router-dom";
 import '../fonts/fonts.css'
 
-const Nav = () => {
+const Nav:FC = () => {
     return <nav className={s.nav}>
         <div className={s.item}>
             <NavLink to ="/profile" activeClassName = {s.active}>Profile</NavLink>

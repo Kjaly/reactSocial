@@ -1,8 +1,6 @@
 import React from 'react';
 import {connect,} from "react-redux";
-import {
-    requestUsers, unfollow, follow, actions,
-} from "../../redux/usersReducer";
+import {actions, follow, requestUsers, unfollow,} from "../../redux/usersReducer";
 import Users from "./Users";
 import Preloader from "../common/preloader/Preloader";
 import {compose} from "redux";
@@ -11,7 +9,8 @@ import {
     getFollowingInProgress,
     getIsFetching,
     getPageSize,
-    getTotalUsersCount, getUsers
+    getTotalUsersCount,
+    getUsers
 } from "../../redux/usersSelectors";
 import {UserType} from "../../Types/types";
 import {AppStateType} from "../../redux/reduxStore";

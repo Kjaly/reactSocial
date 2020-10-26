@@ -1,8 +1,13 @@
-import React from 'react';
+import React, {FC} from 'react';
 import {NavLink} from "react-router-dom";
 import s from '../Dialogs.module.scss'
 
-const DialogItem = (props) => {
+type PropsType={
+    id:number
+    name:string
+}
+
+const DialogItem:FC<PropsType> = (props) => {
     return (
         <div className={s.item}>
             <NavLink to={'/dialogs/' + props.id}>{props.name}</NavLink>

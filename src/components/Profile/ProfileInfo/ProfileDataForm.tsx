@@ -1,13 +1,20 @@
 import s from "./ProfileInfo.module.scss";
 import ProfileStatusWithHooks from "./ProfileStatusWithHooks";
-import React from "react";
-import {Field, reduxForm} from "redux-form";
-import {required} from "../../../utils/validators/validators";
+import React, {FC} from "react";
+import {Field, InjectedFormProps, reduxForm} from "redux-form";
 import {Element} from "../../common/FormsControls/FormsControls";
+import {ProfileType} from "../../../Types/types";
 
 const Input = Element('input')
 const Textarea = Element('textarea')
-const ProfileDataForm = ({profile,status, updateStatus,handleSubmit}) => {
+
+
+type PropsType = {
+    profile:ProfileType,
+    status:string,
+    updateStatus:(status:string)=>void,
+}
+const ProfileDataForm:FC <InjectedFormProps<ProfileType,PropsType> & PropsType> = ({handleSubmit,profile,status, updateStatus,}) => {
 
 
     return <form onSubmit={handleSubmit} className={s.descriptionBlock}>
@@ -30,5 +37,5 @@ const ProfileDataForm = ({profile,status, updateStatus,handleSubmit}) => {
         })} </div>
     </form>
 }
-const ProfileDataReduxForm = reduxForm({form:'profileInfo'})(ProfileDataForm)
+const ProfileDataReduxForm = reduxForm<ProfileType, PropsType>({form:'profileInfo'})(ProfileDataForm)
 export default ProfileDataReduxForm

@@ -1,7 +1,13 @@
-import React from "react";
+import React, {FC} from "react";
 import s from './Post.module.scss'
+import {PostType} from "../../../../Types/types";
 
-const Post = (props) => {
+type PropsType = {
+    message:string
+    counts:number
+}
+
+const Post:FC<PropsType> = (props) => {
     return <div className={s.item}>
         <div className={s.itemImg}>
             <img

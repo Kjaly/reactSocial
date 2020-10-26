@@ -1,7 +1,6 @@
-import React from 'react';
-import s from './News.module..scss';
+import React, {FC} from 'react';
 
-const Music = (props) => {
+const Music:FC = (props) => {
     return (
         <div>
             Music
